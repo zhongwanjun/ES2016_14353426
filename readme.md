@@ -58,15 +58,21 @@ step1:`sudo apt-get update`
 
 * 编译DOL
 ![Alt text](http://i1.piimg.com/567571/d2e46451a78fa4e7.png)
+
 修改build_zip.xml文件
+
 `property name="systemc.inc" value="/home/guanzhuoqun/systemc-2.3.1/include"`
+
 `property name="systemc.lib" value="/home/guanzhuoqun/systemc-2.3.1/lib-linux64/libsystemc.a"`
 
 * 编译DOL 
+
 ` ant -f build_zip.xml all`
+
 ![Alt text](http://i1.piimg.com/567571/37c582f783776a8a.png)
 
 * 运行build/bin/main 路径下的第一个例子
+
 `ant -f runexample.xml -Dnumber=1`
 ![Alt text](http://i1.piimg.com/567571/4af5509bd8c81b20.png)
 
