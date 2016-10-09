@@ -9,54 +9,76 @@ DOL是分布式操作层（distributed operation layer）的简称。DOL结构�
 
 ## DOL配置过程
 ### 先配置环境：在VMWARE中安装UBUNTU虚拟机
+
 ![Alt text](http://i1.piimg.com/567571/a3c66dd0e1fa62a1.png)
 
 ### 在UBUNTU下配置必要的环境
 step1:`sudo apt-get update`
+
 ![Alt text](http://i1.piimg.com/567571/7ceed6ad027487b1.png)
+
  step2:` sudo apt-get install ant`
+ 
  step3:`sudo apt-get install openjdk-7-jdk`
+ 
  ![Alt text](http://i1.piimg.com/567571/56b546c5917f0e24.png)
+ 
  step4:`sudo apt-get install unzip`
+ 
  ![Alt text](http://i1.piimg.com/567571/3537fe1ca3ef8087.png)
 
 ### 下载文件
 
 `sudo wget <http://www.accellera.org/images/downloads/standards/systemc/systemc-2.3.1.tgz/>`
+
 `sudo wget <http://www.tik.ee.ethz.ch/~shapes/downloads/dol_ethz.zip/>`
+
 (因为之前已经成功下载并解压安装，这两步无法给出图片，请谅解)
+
 ###解压文件
 
 * 新建dol文件夹
+
   `mkdir dol`
+  
 * 将dolethz.zip解压到dol文件夹中
+
 `unzip dol_ethz.zip -d dol`
 
 * 解压systemc
- ` tar -zxvf systemc-2.3.1.tgz`
+
+`tar -zxvf systemc-2.3.1.tgz`
  
 ### 编译systemc
 
 * 解压后进入systemc-2.3.1目录
+
 `cd systemc-2.3.1`
 
 * 新建一个临时文件夹objdir
+
 `cd objdir`
 
 * 编译运行configure 
+
 `../congigure CXX=g++ --disable-async-updates`
 
 ![Alt text](http://i1.piimg.com/567571/147964d9771d918d.png)
 
 * 编译systemc
+
 `sudo make install`
+
 `cd`
+
 `ls`
 
 ![Alt text](http://i1.piimg.com/567571/d0e87c84fd457992.png)
+
 工作路径为`/home/guanzhuoqun/systemc-2.3.1`
 
 * 编译DOL
+
 ![Alt text](http://i1.piimg.com/567571/d2e46451a78fa4e7.png)
 
 修改build_zip.xml文件
@@ -74,6 +96,7 @@ step1:`sudo apt-get update`
 * 运行build/bin/main 路径下的第一个例子
 
 `ant -f runexample.xml -Dnumber=1`
+
 ![Alt text](http://i1.piimg.com/567571/4af5509bd8c81b20.png)
 
 ## 实验收获与感想
